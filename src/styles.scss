@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial;
+  margin: auto;
+  padding: 0 0.25em;
+
+  @media screen {
+    max-width: 720px;
+  }
+}
