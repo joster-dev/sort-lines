@@ -1,6 +1,8 @@
-<h1>Sort Lines Alphabetically</h1>
+<h1>
+  Sort Lines Alphabetically
+</h1>
 <!-- <img src="../assets/lines.svg"> -->
-<!-- <svg
+<svg
   version="1.1"
   xmlns="http://www.w3.org/2000/svg"
   width="10em"
@@ -37,7 +39,7 @@
   <text>
     <tspan
       x="6"
-      y="96"
+      y="32"
       fill="#00FF00"
       stroke="#000000"
       stroke-miterlimit="10"
@@ -47,26 +49,31 @@
       XYZ
     </tspan>
   </text>
-</svg> -->
-<div>
-  <section>
-    <label>
-      Enter stuff here
-      <textarea
-        [(ngModel)]="model"
-        (ngModelChange)="modelChangeSubject.next()"
-      ></textarea>
-    </label>
-    <button (click)="model = null">
-      Reset
-    </button>
-  </section>
-  <section>
-    <h2>
-      Result
-    </h2>
-    <div id="sorted">
-      {{sortedModel}}
-    </div>
-  </section>
-</div>
+</svg>
+
+<form
+  #form="ngForm"
+  (ngSubmit)="submit()"
+>
+  <label>
+    Enter stuff here
+    <textarea
+      [(ngModel)]="model"
+      name="model"
+    ></textarea>
+  </label>
+  <button>
+    Sort Alphabetically
+  </button>
+  <button (click)="form.reset()">
+    Reset
+  </button>
+</form>
+<section *ngIf="sortedModel.length > 0">
+  <h2>
+    Result
+  </h2>
+  <div id="sorted">
+    {{sortedModel}}
+  </div>
+</section>

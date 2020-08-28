@@ -1,7 +1,7 @@
 {
   "name": "sort-lines",
   "short_name": "sort-lines",
-  "theme_color": "#1976d2",
+  "theme_color": "#fafafa",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
+
 @Component({
   selector: 'sl-root',
   templateUrl: './app.component.html',
@@ -8,28 +11,25 @@ import { Component } from '@angular/core';
 export class AppComponent {
   model: string | null = null;
   sortedModel = '';
+  modelChangeSubject = new Subject();
 
-  submit(): void {
+  constructor() {
+    this.modelChangeSubject
+      .pipe(debounceTime(500))
+      .subscribe({
+        next: () => this.sort()
+      });
+  }
+
+  sort(): void {
     if (typeof this.model !== 'string' || this.model.trim().length === 0) {
       this.sortedModel = '';
       return;
     }
     this.sortedModel = this.model
       .split('\n')
-      .sort((a, b) => {
-        const shortString = a.length < b.length
-          ? a
-          : b;
-        for (let i = 0; i < shortString.length; i++) {
-          const compare = a.charCodeAt(i) - b.charCodeAt(i);
-          if (compare < 0) {
-            return -1;
-          } else if (compare > 0) {
-            return 1;
-          }
-        }
-        return 1;
-      })
+      .filter(value => value.trim().length > 0)
+      .sort((a, b) => a.localeCompare(b))
       .join('\n');
   }
 }

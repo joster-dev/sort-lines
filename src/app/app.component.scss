@@ -8,3 +8,11 @@ textarea {
   height: 10em;
   margin: 0.5em 0;
 }
+
+:host > div {
+  display: grid;
+  @media (min-width: 720px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+  }
+}
