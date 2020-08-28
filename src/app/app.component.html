@@ -50,21 +50,25 @@
 </svg> -->
 <div>
   <section>
-    <label>
-      Enter stuff here
-      <textarea
-        [(ngModel)]="model"
-        (ngModelChange)="modelChangeSubject.next()"
-      ></textarea>
-    </label>
-    <button (click)="model = null">
+    <fc-text
+      [(ngModel)]="model"
+      (ngModelChange)="changeSubject.next()"
+      label="Enter lines here"
+    ></fc-text>
+    <br />
+    <fc-choice
+      [(ngModel)]="ascending"
+      (ngModelChange)="changeSubject.next()"
+      required
+      [items]="ascendingItems"
+    ></fc-choice>
+    <br />
+    <fc-button (clicked)="reset()">
       Reset
-    </button>
+    </fc-button>
   </section>
   <section>
-    <h2>
-      Result
-    </h2>
+    <h2>Result</h2>
     <div id="sorted">
       {{sortedModel}}
     </div>

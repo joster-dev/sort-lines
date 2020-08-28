@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { FormControlModule } from '@joster-dev/form-control';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     FormsModule,
+    FormControlModule,
     ServiceWorkerModule.register(
       'ngsw-worker.js',
       { enabled: environment.production }

@@ -14,5 +14,9 @@ textarea {
   @media (min-width: 720px) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 1em;
+    > section:last-child {
+      padding-left: 0.5em;
+      border-left: 1px solid black;
+    }
   }
 }
