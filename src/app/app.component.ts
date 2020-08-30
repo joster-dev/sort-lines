@@ -10,7 +10,7 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class AppComponent {
   model: string | null = null;
-  sortedModel = '';
+  sortedModel = '...';
   changeSubject = new Subject();
   ascending = true;
   ascendingItems = [
@@ -33,7 +33,7 @@ export class AppComponent {
 
   private sort(): void {
     if (typeof this.model !== 'string' || this.model.trim().length === 0) {
-      this.sortedModel = '';
+      this.sortedModel = '...';
       return;
     }
     this.sortedModel = this.model

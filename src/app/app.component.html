@@ -1,53 +1,7 @@
-<h1>Sort Lines Alphabetically</h1>
-<!-- <img src="../assets/lines.svg"> -->
-<!-- <svg
-  version="1.1"
-  xmlns="http://www.w3.org/2000/svg"
-  width="10em"
-  height="10em"
-  viewBox="0 0 100 100"
->
-  <rect
-    x="10"
-    y="10"
-    fill="#FFFFFF"
-    stroke="#000000"
-    stroke-width="1"
-    width="80"
-    height="10"
-  />
-  <rect
-    x="10"
-    y="40"
-    fill="#FFFFFF"
-    stroke="#000000"
-    stroke-width="1"
-    width="80"
-    height="10"
-  />
-  <rect
-    x="10"
-    y="70"
-    fill="#FFFFFF"
-    stroke="#000000"
-    stroke-width="1"
-    width="80"
-    height="10"
-  />
-  <text>
-    <tspan
-      x="6"
-      y="96"
-      fill="#00FF00"
-      stroke="#000000"
-      stroke-miterlimit="10"
-      font-family="Arial"
-      font-size="38"
-    >
-      XYZ
-    </tspan>
-  </text>
-</svg> -->
+<h1>
+  <img src="assets/icon.svg">
+  Sort Lines Alphabetically
+</h1>
 <div>
   <section>
     <fc-text
@@ -56,16 +10,16 @@
       label="Enter lines here"
     ></fc-text>
     <br />
+    <fc-button (clicked)="reset()">
+      Reset
+    </fc-button>
+    <br />
     <fc-choice
       [(ngModel)]="ascending"
       (ngModelChange)="changeSubject.next()"
       required
       [items]="ascendingItems"
     ></fc-choice>
-    <br />
-    <fc-button (clicked)="reset()">
-      Reset
-    </fc-button>
   </section>
   <section>
     <h2>Result</h2>
@@ -75,12 +29,3 @@
   </section>
 </div>
 <br />
-<iframe
-  src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=13&l=ez&f=ifr&linkID=a3980f716a8edc5debbbaa16c20a6e55&t=joster0e-20&tracking_id=joster0e-20"
-  width="468"
-  height="60"
-  scrolling="no"
-  border="0"
-  marginwidth="0"
-  frameborder="0"
-></iframe>

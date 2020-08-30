@@ -11,7 +11,7 @@ textarea {
 
 :host > div {
   display: grid;
-  @media (min-width: 720px) {
+  @media (min-width: 690px) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 1em;
     > section:last-child {
@@ -22,4 +22,8 @@ textarea {
       }
     }
   }
+}
+
+img {
+  height: 1em;
 }
