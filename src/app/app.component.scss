@@ -13,7 +13,7 @@ textarea {
   display: grid;
   @media (min-width: 690px) {
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1em;
+    grid-gap: 0.25em;
     > section:last-child {
       padding-left: 0.5em;
       border-left: 1px dashed darkgrey;
