@@ -16,7 +16,10 @@ textarea {
     grid-gap: 1em;
     > section:last-child {
       padding-left: 0.5em;
-      border-left: 1px solid black;
+      border-left: 1px dashed darkgrey;
+      > h2 {
+        margin-top: 0;
+      }
     }
   }
 }
