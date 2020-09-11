@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1598580319787,
+  "timestamp": 1599782354961,
   "index": "https://joster-dev.github.io/sort-lines/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "https://joster-dev.github.io/sort-lines/favicon.ico",
         "https://joster-dev.github.io/sort-lines/index.html",
-        "https://joster-dev.github.io/sort-lines/main.6506bf88e26f6679afc9.js",
+        "https://joster-dev.github.io/sort-lines/main.d79994573c384beb0538.js",
         "https://joster-dev.github.io/sort-lines/manifest.webmanifest",
-        "https://joster-dev.github.io/sort-lines/polyfills.a4021de53358bb0fec14.js",
-        "https://joster-dev.github.io/sort-lines/runtime.e227d1a0e31cbccbf8ec.js",
-        "https://joster-dev.github.io/sort-lines/styles.6e1d4cc2ec94157f749f.css"
+        "https://joster-dev.github.io/sort-lines/polyfills.35a5ca1855eb057f016a.js",
+        "https://joster-dev.github.io/sort-lines/runtime.acf0dec4155e77772545.js",
+        "https://joster-dev.github.io/sort-lines/styles.3baa17398c1d4b394809.css"
       ],
       "patterns": []
     },
@@ -29,37 +29,21 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://joster-dev.github.io/sort-lines/assets/icons/icon-128x128.png",
-        "https://joster-dev.github.io/sort-lines/assets/icons/icon-144x144.png",
-        "https://joster-dev.github.io/sort-lines/assets/icons/icon-152x152.png",
-        "https://joster-dev.github.io/sort-lines/assets/icons/icon-192x192.png",
-        "https://joster-dev.github.io/sort-lines/assets/icons/icon-384x384.png",
-        "https://joster-dev.github.io/sort-lines/assets/icons/icon-512x512.png",
-        "https://joster-dev.github.io/sort-lines/assets/icons/icon-72x72.png",
-        "https://joster-dev.github.io/sort-lines/assets/icons/icon-96x96.png",
-        "https://joster-dev.github.io/sort-lines/assets/lines.svg"
+        "https://joster-dev.github.io/sort-lines/assets/icon.svg"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://joster-dev.github.io/sort-lines/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "https://joster-dev.github.io/sort-lines/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "https://joster-dev.github.io/sort-lines/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "https://joster-dev.github.io/sort-lines/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "https://joster-dev.github.io/sort-lines/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "https://joster-dev.github.io/sort-lines/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "https://joster-dev.github.io/sort-lines/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "https://joster-dev.github.io/sort-lines/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "https://joster-dev.github.io/sort-lines/assets/lines.svg": "07fb5d2cf0f879344c02530c78c482e254c96328",
+    "https://joster-dev.github.io/sort-lines/assets/icon.svg": "5d3c01ff2d19e6e8a4c699b596fe55c462bf1d44",
     "https://joster-dev.github.io/sort-lines/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://joster-dev.github.io/sort-lines/index.html": "096ae9953ed4424fa41f02dd5b68d6914f9981b4",
-    "https://joster-dev.github.io/sort-lines/main.6506bf88e26f6679afc9.js": "2b7ccaf80b40842d7982e7b69e5243e7d6f8b1d8",
-    "https://joster-dev.github.io/sort-lines/manifest.webmanifest": "75fc374f3c802ba0ab3f740bab6a2cabe719d434",
-    "https://joster-dev.github.io/sort-lines/polyfills.a4021de53358bb0fec14.js": "b47435a9ef2a4829f2f9dfd35599bde3614981b1",
-    "https://joster-dev.github.io/sort-lines/runtime.e227d1a0e31cbccbf8ec.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "https://joster-dev.github.io/sort-lines/styles.6e1d4cc2ec94157f749f.css": "69ba112994fa67ca0594d7a567e98c21e4d9700b"
+    "https://joster-dev.github.io/sort-lines/index.html": "2656a1d20736e5ff273674709122be967539d4dd",
+    "https://joster-dev.github.io/sort-lines/main.d79994573c384beb0538.js": "749e567008593e06376e3e1e1f5ac5dd4ae93fe9",
+    "https://joster-dev.github.io/sort-lines/manifest.webmanifest": "5d182aad219b29fde90cc5b369e7bd0ee73003f1",
+    "https://joster-dev.github.io/sort-lines/polyfills.35a5ca1855eb057f016a.js": "578360d24ce37383f261c7ef63b1f822d28e8dde",
+    "https://joster-dev.github.io/sort-lines/runtime.acf0dec4155e77772545.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://joster-dev.github.io/sort-lines/styles.3baa17398c1d4b394809.css": "df2c96e29106fbb5ecdf77cdffa18f245f57b184"
   },
   "navigationUrls": [
     {
