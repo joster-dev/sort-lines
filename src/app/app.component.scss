@@ -1,29 +1,27 @@
-#sorted {
-  white-space: pre-line;
-}
-
-textarea {
-  display: block;
-  width: 100%;
-  height: 10em;
-  margin: 0.5em 0;
-}
-
 :host > div {
   display: grid;
-  @media (min-width: 690px) {
+
+  @media (min-width: 720px) {
+    margin-top: 0;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0.25em;
-    > section:last-child {
-      padding-left: 0.5em;
-      border-left: 0.2em double darkgrey;
-      > h2 {
+  }
+
+  > section {
+    > * {
+      margin-bottom: 1em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &:last-child {
+      margin-top: 2em;
+      @media (min-width: 720px) {
         margin-top: 0;
+        padding-left: 0.5em;
+        border-left: 0.2em double darkgrey;
       }
     }
   }
-}
-
-img {
-  height: 1em;
 }

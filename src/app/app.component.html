@@ -1,5 +1,4 @@
 <h1>
-  <img src="assets/icon.svg">
   Sort Lines Alphabetically
 </h1>
 <div>
@@ -7,25 +6,54 @@
     <fc-text
       [(ngModel)]="model"
       (ngModelChange)="changeSubject.next()"
-      label="Enter lines here"
-    ></fc-text>
-    <br />
-    <fc-button (clicked)="reset()">
-      Reset
-    </fc-button>
-    <br />
+    >
+      Enter lines here
+      <icon
+        size="1em"
+        type="star"
+        fill="F2CB05"
+      ></icon>
+    </fc-text>
+    <div>
+      <fc-button (clicked)="reset()">
+        Reset
+      </fc-button>
+    </div>
     <fc-choice
       [(ngModel)]="ascending"
       (ngModelChange)="changeSubject.next()"
       required
-      label="Order"
       [items]="ascendingItems"
-    ></fc-choice>
+    >
+      Order
+    </fc-choice>
   </section>
   <section>
-    <h2>Result</h2>
-    <div id="sorted">
-      {{sortedModel}}
+    <fc-text
+      [(ngModel)]="sortedModel"
+      [disabled]="sortedModel === null"
+    >
+      Result
+      <icon
+        *ngIf="ascending"
+        size="1em"
+        type="descend"
+        fill="247000"
+      ></icon>
+      <icon
+        *ngIf="!ascending"
+        size="1em"
+        type="ascend"
+        fill="247000"
+      ></icon>
+    </fc-text>
+    <div>
+      <fc-button
+        [isDisabled]="sortedModel === null"
+        (clicked)="copy()"
+      >
+        Copy
+      </fc-button>
     </div>
   </section>
 </div>

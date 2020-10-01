@@ -10,7 +10,7 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class AppComponent {
   model: string | null = null;
-  sortedModel = '...';
+  sortedModel: string | null = null;
   changeSubject = new Subject();
   ascending = true;
   ascendingItems = [
@@ -26,6 +26,17 @@ export class AppComponent {
       });
   }
 
+  copy(): void {
+    if (this.sortedModel === null) {
+      return;
+    }
+    try {
+      navigator.clipboard.writeText(this.sortedModel);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   reset(): void {
     this.model = null;
     this.changeSubject.next();
@@ -33,7 +44,7 @@ export class AppComponent {
 
   private sort(): void {
     if (typeof this.model !== 'string' || this.model.trim().length === 0) {
-      this.sortedModel = '...';
+      this.sortedModel = null;
       return;
     }
     this.sortedModel = this.model
