@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1601597178737,
+  "timestamp": 1601600330291,
   "index": "https://joster-dev.github.io/sort-lines/index.html",
   "assetGroups": [
     {
@@ -38,7 +38,7 @@
   "hashTable": {
     "https://joster-dev.github.io/sort-lines/assets/logo.png": "1db69a42e431832a8fc9ce7583aaabed382e70e2",
     "https://joster-dev.github.io/sort-lines/assets/logo.svg": "98de911393e18673bbfda876a7a52214559f9033",
-    "https://joster-dev.github.io/sort-lines/index.html": "3e7f0846c705dc311cbb5862af5c5f5232cf3c73",
+    "https://joster-dev.github.io/sort-lines/index.html": "a2df5fb337bc647c68d8b98bb854474806025c97",
     "https://joster-dev.github.io/sort-lines/main.23998026bd70df9d9530.js": "e57cade01224dadbaac9d8e63371fcc49cba2dde",
     "https://joster-dev.github.io/sort-lines/manifest.webmanifest": "89ec223d3e8746252d65c2476b661441f4f2ddc0",
     "https://joster-dev.github.io/sort-lines/polyfills.35a5ca1855eb057f016a.js": "578360d24ce37383f261c7ef63b1f822d28e8dde",
