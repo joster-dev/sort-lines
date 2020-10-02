@@ -1,0 +1,54 @@
+<svg
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 100 100"
+>
+  <linearGradient
+    id="lg1"
+    gradientUnits="userSpaceOnUse"
+    gradientTransform="rotate(90)"
+  >
+    <stop
+      offset="0"
+      style="stop-color:#FFFFFF"
+    />
+    <stop
+      offset="1"
+      style="stop-color:#DDDDDD"
+    />
+  </linearGradient>
+  <path
+    fill="url(#lg1)"
+    d="M100,88c0,6.628-5.372,12-12,12H12c-6.627,0-12-5.372-12-12V12C0,5.373,5.373,0,12,0h76
+	c6.628,0,12,5.373,12,12V88z"
+  />
+  <linearGradient
+    id="lg2"
+    gradientUnits="userSpaceOnUse"
+    gradientTransform="rotate(0)"
+  >
+    <stop
+      offset="0"
+      style="stop-color:#000000"
+    />
+    <stop
+      offset="1"
+      style="stop-color:#247000"
+    />
+  </linearGradient>
+  <polygon
+    fill="url(#lg2)"
+    stroke="#000000"
+    stroke-width="5"
+    stroke-miterlimit="10"
+    points="50,96.158 20,61.158 80,61.158
+	"
+  />
+  <polygon
+    fill="url(#lg2)"
+    stroke="#000000"
+    stroke-width="5"
+    stroke-miterlimit="10"
+    points="50,3.841 20,38.841 80,38.841 "
+  />
+</svg>

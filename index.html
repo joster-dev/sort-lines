@@ -12,7 +12,7 @@
   <link
     rel="icon"
     type="image/x-icon"
-    href="assets/icon.svg"
+    href="assets/logo.png"
   >
   <link
     rel="manifest"
@@ -27,29 +27,77 @@
     content="Sort Lines Alphabetically"
   >
   <meta
+    property="og:type"
+    content="website"
+  >
+  <meta
     property="og:description"
-    content="A tool to sort text lines in alphabetical order"
+    content="A tool that will sort text lines in alphabetical order"
   >
   <meta
     property="og:url"
-    content="http://sort-lines.xyz"
+    content="https://joster-dev.github.io/sort-lines/"
+  >
+  <meta
+    property="og:image"
+    content="https://joster-dev.github.io/sort-lines/assets/logo.png"
+  >
+  <meta
+    property="og:image:width"
+    content="500"
+  />
+  <meta
+    property="og:image:height"
+    content="500"
+  />
+  <meta
+    property="og:image:alt"
+    content="Ascend and descend icons"
+  />
+  <meta
+    property="og:site_name"
+    content="Jacob Osterhout Projects"
   >
   <meta
     name="twitter:card"
     content="summary"
   >
-  <script
-    data-ad-client="ca-pub-1550709389333867"
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-  ></script>
+  <meta
+    name="twitter:site"
+    content="@JacobOsterhout"
+  >
+  <meta
+    name="fb:app_id"
+    content="3279893495433556"
+  >
 <link rel="stylesheet" href="styles.3baa17398c1d4b394809.css"></head>
 
 <body>
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '3279893495433556',
+        cookie: true,
+        xfbml: true,
+        version: 'v8.0'
+      });
+
+      FB.AppEvents.logPageView();
+
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
   <sl-root></sl-root>
   <noscript>
     Please enable JavaScript to continue using this application.
   </noscript>
-<script src="runtime.acf0dec4155e77772545.js" defer></script><script src="polyfills.35a5ca1855eb057f016a.js" defer></script><script src="main.d79994573c384beb0538.js" defer></script></body>
+<script src="runtime.acf0dec4155e77772545.js" defer></script><script src="polyfills.35a5ca1855eb057f016a.js" defer></script><script src="main.23998026bd70df9d9530.js" defer></script></body>
 
 </html>
