@@ -15,8 +15,8 @@
     "@angular/platform-browser-dynamic": "~10.1.4",
     "@angular/router": "~10.1.4",
     "@angular/service-worker": "~10.1.4",
-    "@joster-dev/form-control": "0.0.5",
-    "@joster-dev/icon": "0.0.9",
+    "@joster-dev/form-control": "0.0.7",
+    "@joster-dev/icon": "0.0.10",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
