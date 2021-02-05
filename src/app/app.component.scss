@@ -1,11 +1,13 @@
-:host > div {
+main {
   display: grid;
   margin-bottom: 2em;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
 
   @media (min-width: 720px) {
     margin-top: 0;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 0.25em;
+    grid-gap: 1em;
   }
 
   > section {
@@ -20,9 +22,29 @@
       margin-top: 2em;
       @media (min-width: 720px) {
         margin-top: 0;
-        padding-left: 0.5em;
-        border-left: 0.2em double darkgrey;
       }
     }
+  }
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+
+  background: linear-gradient(-45deg, #103000, #000000) 0 0 / 150% 150%;
+  animation: 10s ease 0s infinite gradient;
+}
+
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 50%;
   }
 }

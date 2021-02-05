@@ -1,7 +1,7 @@
 <h1>
   Sort Lines Alphabetically
 </h1>
-<div>
+<main>
   <section>
     <fc-text
       [(ngModel)]="model"
@@ -11,7 +11,8 @@
       <icon
         size="1em"
         type="star"
-        fill="F2CB05"
+        [fillOpacity]="0"
+        stroke="FFFFFF"
       ></icon>
     </fc-text>
     <div>
@@ -35,16 +36,10 @@
     >
       Result
       <icon
-        *ngIf="ascending"
         size="1em"
-        type="descend"
-        fill="247000"
-      ></icon>
-      <icon
-        *ngIf="!ascending"
-        size="1em"
-        type="ascend"
-        fill="247000"
+        [type]="ascending ? 'descend' : 'ascend'"
+        [fillOpacity]="0"
+        stroke="FFFFFF"
       ></icon>
     </fc-text>
     <div>
@@ -56,4 +51,5 @@
       </fc-button>
     </div>
   </section>
-</div>
+</main>
+<div id="background"></div>
