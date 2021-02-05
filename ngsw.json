@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1603504238304,
+  "timestamp": 1612492960700,
   "index": "https://joster-dev.github.io/sort-lines/index.html",
   "assetGroups": [
     {
@@ -12,11 +12,11 @@
       },
       "urls": [
         "https://joster-dev.github.io/sort-lines/index.html",
-        "https://joster-dev.github.io/sort-lines/main.03b5bbfe79e19b8e68eb.js",
+        "https://joster-dev.github.io/sort-lines/main.1be525c63439a75f964a.js",
         "https://joster-dev.github.io/sort-lines/manifest.webmanifest",
-        "https://joster-dev.github.io/sort-lines/polyfills.35a5ca1855eb057f016a.js",
-        "https://joster-dev.github.io/sort-lines/runtime.acf0dec4155e77772545.js",
-        "https://joster-dev.github.io/sort-lines/styles.3baa17398c1d4b394809.css"
+        "https://joster-dev.github.io/sort-lines/polyfills.70ffb02a82cc06d3b0cb.js",
+        "https://joster-dev.github.io/sort-lines/runtime.7b63b9fd40098a2e8207.js",
+        "https://joster-dev.github.io/sort-lines/styles.2c793c03156c0c479130.css"
       ],
       "patterns": []
     },
@@ -38,12 +38,12 @@
   "hashTable": {
     "https://joster-dev.github.io/sort-lines/assets/logo.png": "1db69a42e431832a8fc9ce7583aaabed382e70e2",
     "https://joster-dev.github.io/sort-lines/assets/logo.svg": "98de911393e18673bbfda876a7a52214559f9033",
-    "https://joster-dev.github.io/sort-lines/index.html": "d0f9d73a9022b2f1712abf99539735016b7e0cd9",
-    "https://joster-dev.github.io/sort-lines/main.03b5bbfe79e19b8e68eb.js": "1d04a12ea8da5ab37ab2ee451df243e6125be6dc",
+    "https://joster-dev.github.io/sort-lines/index.html": "76b4604ddb9e8983f85aa7363ba747c4cd330544",
+    "https://joster-dev.github.io/sort-lines/main.1be525c63439a75f964a.js": "aab9c06af6b08476b1f48f16ef8031ef2d3357f8",
     "https://joster-dev.github.io/sort-lines/manifest.webmanifest": "89ec223d3e8746252d65c2476b661441f4f2ddc0",
-    "https://joster-dev.github.io/sort-lines/polyfills.35a5ca1855eb057f016a.js": "578360d24ce37383f261c7ef63b1f822d28e8dde",
-    "https://joster-dev.github.io/sort-lines/runtime.acf0dec4155e77772545.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "https://joster-dev.github.io/sort-lines/styles.3baa17398c1d4b394809.css": "df2c96e29106fbb5ecdf77cdffa18f245f57b184"
+    "https://joster-dev.github.io/sort-lines/polyfills.70ffb02a82cc06d3b0cb.js": "763cd3b34dfa4600ebb9d9588ec7116988e98920",
+    "https://joster-dev.github.io/sort-lines/runtime.7b63b9fd40098a2e8207.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://joster-dev.github.io/sort-lines/styles.2c793c03156c0c479130.css": "48c884a3f539d0508a02e7bcf680a125a87ca533"
   },
   "navigationUrls": [
     {
@@ -62,5 +62,6 @@
       "positive": false,
       "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
     }
-  ]
+  ],
+  "navigationRequestStrategy": "performance"
 }
