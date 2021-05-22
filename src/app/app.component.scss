@@ -1,8 +1,6 @@
 main {
   display: grid;
   margin-bottom: 2em;
-  margin-right: 0.5em;
-  margin-left: 0.5em;
 
   @media (min-width: 720px) {
     margin-top: 0;
@@ -34,9 +32,17 @@ main {
   left: 0;
   bottom: 0;
   z-index: -1;
+  height: 100vh;
 
-  background: linear-gradient(-45deg, #103000, #000000) 0 0 / 150% 150%;
-  animation: 10s ease 0s infinite gradient;
+  animation: 10s ease-in-out 0s infinite gradient;
+
+  &.dark {
+    background: linear-gradient(-45deg, #0a1109, #000000) 0 0 / 150% 150%;
+  }
+
+  &.light {
+    background: linear-gradient(-45deg, #ced6e0, #ffffff) 0 0 / 150% 150%;
+  }
 }
 
 @keyframes gradient {

@@ -17,6 +17,12 @@ export class AppComponent {
     { key: true, value: 'Ascending' },
     { key: false, value: 'Descending' }
   ];
+  readonly lightColor = 'F5F5F5';
+  theme = this.lightColor;
+  themeItems = [
+    { key: this.lightColor, value: 'Dark' },
+    { key: '0A0A0A', value: 'Light' }
+  ];
 
   constructor() {
     this.changeSubject
@@ -40,6 +46,10 @@ export class AppComponent {
   reset(): void {
     this.model = null;
     this.changeSubject.next();
+  }
+
+  onChangeTheme(): void {
+    document.body.style.color = `#${this.theme}`;
   }
 
   private sort(): void {

@@ -1,6 +1,6 @@
-<h1>
-  Sort Lines Alphabetically
-</h1>
+<header>
+  <h1>Sort Lines Alphabetically</h1>
+</header>
 <main>
   <section>
     <fc-text
@@ -11,8 +11,8 @@
       <icon
         size="1em"
         type="star"
-        [fillOpacity]="0"
-        stroke="FFFFFF"
+        fillRotate="90"
+        [fill]="[null, 'current']"
       ></icon>
     </fc-text>
     <div>
@@ -25,9 +25,7 @@
       (ngModelChange)="changeSubject.next()"
       required
       [items]="ascendingItems"
-    >
-      Order
-    </fc-choice>
+    >Order</fc-choice>
   </section>
   <section>
     <fc-text
@@ -36,10 +34,18 @@
     >
       Result
       <icon
+        *ngIf="ascending"
         size="1em"
-        [type]="ascending ? 'descend' : 'ascend'"
-        [fillOpacity]="0"
-        stroke="FFFFFF"
+        type="descend"
+        fillRotate="90"
+        [fill]="[null, 'current']"
+      ></icon>
+      <icon
+        *ngIf="!ascending"
+        size="1em"
+        type="ascend"
+        fillRotate="90"
+        [fill]="['current', null]"
       ></icon>
     </fc-text>
     <div>
@@ -50,6 +56,19 @@
         Copy
       </fc-button>
     </div>
+    <div>
+      <fc-choice
+        [(ngModel)]="theme"
+        (ngModelChange)="onChangeTheme()"
+        required
+        [items]="themeItems"
+      >
+        Theme
+      </fc-choice>
+    </div>
   </section>
 </main>
-<div id="background"></div>
+<div
+  id="background"
+  [class]="theme === lightColor ? 'dark' : 'light'"
+></div>
