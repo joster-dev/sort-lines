@@ -1,7 +1,13 @@
-<header>
+<header #top>
   <h1>Sort Lines Alphabetically</h1>
+  <icon
+    [type]="isDark ? 'moon' : 'sun'"
+    size="3em"
+    [fill]="['current', null]"
+    aria-hidden="true"
+  ></icon>
 </header>
-<main>
+<main #scrollElement>
   <section>
     <fc-text
       [(ngModel)]="model"
@@ -13,62 +19,90 @@
         type="star"
         fillRotate="90"
         [fill]="[null, 'current']"
+        aria-hidden="true"
       ></icon>
     </fc-text>
     <div>
-      <fc-button (clicked)="reset()">
-        Reset
+      <fc-button (clicked)="onClickClear()">
+        Clear
       </fc-button>
     </div>
     <fc-choice
-      [(ngModel)]="ascending"
+      [(ngModel)]="isDescend"
       (ngModelChange)="changeSubject.next()"
       required
-      [items]="ascendingItems"
-    >Order</fc-choice>
+      [items]="sortOrders"
+    >
+      Order
+    </fc-choice>
   </section>
   <section>
     <fc-text
       [(ngModel)]="sortedModel"
+      (ngModelChange)="onChangeResult()"
       [disabled]="sortedModel === null"
     >
       Result
       <icon
-        *ngIf="ascending"
+        *ngIf="isDescend"
         size="1em"
         type="descend"
         fillRotate="90"
         [fill]="[null, 'current']"
+        aria-hidden="true"
       ></icon>
       <icon
-        *ngIf="!ascending"
+        *ngIf="!isDescend"
         size="1em"
         type="ascend"
         fillRotate="90"
         [fill]="['current', null]"
+        aria-hidden="true"
       ></icon>
     </fc-text>
     <div>
       <fc-button
         [isDisabled]="sortedModel === null"
-        (clicked)="copy()"
+        (clicked)="onClickCopy()"
       >
         Copy
+      </fc-button>
+      <fc-button
+        *ngIf="isResultChanged"
+        (clicked)="changeSubject.next()"
+      >
+        Reset
       </fc-button>
     </div>
     <div>
       <fc-choice
-        [(ngModel)]="theme"
+        [(ngModel)]="isDark"
         (ngModelChange)="onChangeTheme()"
         required
-        [items]="themeItems"
+        [items]="themes"
       >
         Theme
       </fc-choice>
     </div>
   </section>
 </main>
+<footer *ngIf="hasScrollbar">
+  <!-- <fc-link to my homepage> -->
+  <fc-button
+    aria-label="Back to Top"
+    title="Back to Top"
+    (clicked)="onClickTop(top)"
+  >
+    <icon
+      type="chevron"
+      size="1.5em"
+      fillRotate="90"
+      [fill]="['current', null]"
+      aria-hidden="true"
+    ></icon>
+  </fc-button>
+</footer>
 <div
   id="background"
-  [class]="theme === lightColor ? 'dark' : 'light'"
+  [class]="isDark ? 'dark' : 'light'"
 ></div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck, ElementRef, OnInit } from '@angular/core';
 
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -8,23 +8,24 @@ import { debounceTime } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, DoCheck {
   model: string | null = null;
   sortedModel: string | null = null;
   changeSubject = new Subject();
-  ascending = true;
-  ascendingItems = [
-    { key: true, value: 'Ascending' },
-    { key: false, value: 'Descending' }
+  isDescend = true;
+  sortOrders = [
+    { key: true, value: 'Descend' },
+    { key: false, value: 'Ascend' }
   ];
-  readonly lightColor = 'F5F5F5';
-  theme = this.lightColor;
-  themeItems = [
-    { key: this.lightColor, value: 'Dark' },
-    { key: '0A0A0A', value: 'Light' }
+  isDark = true;
+  themes = [
+    { key: true, value: 'Dark' },
+    { key: false, value: 'Light' }
   ];
+  isResultChanged = false;
+  hasScrollbar = false;
 
-  constructor() {
+  constructor(private hostElement: ElementRef) {
     this.changeSubject
       .pipe(debounceTime(500))
       .subscribe({
@@ -32,7 +33,28 @@ export class AppComponent {
       });
   }
 
-  copy(): void {
+  ngOnInit(): void {
+    this.onChangeTheme();
+  }
+
+  ngDoCheck(): void {
+    this.hasScrollbar = this.hostElement.nativeElement.clientHeight < this.hostElement.nativeElement.scrollHeight;
+  }
+
+  onChangeResult(): void {
+    this.isResultChanged = true;
+  }
+
+  onChangeTheme(): void {
+    document.body.style.color = `#${this.isDark ? 'F5F5F5' : '0A0A0A'}`;
+  }
+
+  onClickClear(): void {
+    this.model = null;
+    this.changeSubject.next();
+  }
+
+  onClickCopy(): void {
     if (this.sortedModel === null) {
       return;
     }
@@ -43,16 +65,14 @@ export class AppComponent {
     }
   }
 
-  reset(): void {
-    this.model = null;
-    this.changeSubject.next();
-  }
-
-  onChangeTheme(): void {
-    document.body.style.color = `#${this.theme}`;
+  onClickTop(ele: HTMLElement): void {
+    ele.scrollIntoView({
+      behavior: 'smooth',
+    });
   }
 
   private sort(): void {
+    this.isResultChanged = false;
     if (typeof this.model !== 'string' || this.model.trim().length === 0) {
       this.sortedModel = null;
       return;
@@ -60,7 +80,7 @@ export class AppComponent {
     this.sortedModel = this.model
       .split('\n')
       .filter(value => value.trim().length > 0)
-      .sort((a, b) => a.localeCompare(b) * (this.ascending ? 1 : -1))
+      .sort((a, b) => a.localeCompare(b) * (this.isDescend ? 1 : -1))
       .join('\n');
   }
 }
