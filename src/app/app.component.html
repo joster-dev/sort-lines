@@ -35,6 +35,14 @@
     >
       Order
     </fc-choice>
+    <fc-choice
+      [(ngModel)]="isRemoveDuplicate"
+      (ngModelChange)="changeSubject.next()"
+      required
+      [items]="duplicateOptions"
+    >
+      Remove Duplicates
+    </fc-choice>
   </section>
   <section>
     <fc-text

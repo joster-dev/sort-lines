@@ -15,12 +15,17 @@ export class AppComponent implements OnInit, DoCheck {
   isDescend = true;
   sortOrders = [
     { key: true, value: 'Descend' },
-    { key: false, value: 'Ascend' }
+    { key: false, value: 'Ascend' },
   ];
   isDark = true;
   themes = [
     { key: true, value: 'Dark' },
-    { key: false, value: 'Light' }
+    { key: false, value: 'Light' },
+  ];
+  isRemoveDuplicate = false;
+  duplicateOptions = [
+    { key: true, value: 'Yes' },
+    { key: false, value: 'No' },
   ];
   isResultChanged = false;
   hasScrollbar = false;
@@ -77,8 +82,11 @@ export class AppComponent implements OnInit, DoCheck {
       this.sortedModel = null;
       return;
     }
-    this.sortedModel = this.model
-      .split('\n')
+    let split = this.model.split('\n');
+    if (this.isRemoveDuplicate) {
+      split = [...new Set(split)];
+    }
+    this.sortedModel = split
       .filter(value => value.trim().length > 0)
       .sort((a, b) => a.localeCompare(b) * (this.isDescend ? 1 : -1))
       .join('\n');
