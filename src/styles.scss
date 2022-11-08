@@ -19,7 +19,7 @@ header {
 footer {
   text-align: right;
   margin-bottom: 0.5em;
-  > fc-button {
+  > jo-button {
     display: inline-block;
   }
 }
@@ -36,8 +36,7 @@ main {
 
   > section {
     > * {
-      display: flex;
-      justify-content: space-between;
+      display: block;
       margin-bottom: 1em;
       &:last-child {
         margin-bottom: 0;

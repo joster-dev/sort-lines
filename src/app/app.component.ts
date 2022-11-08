@@ -11,7 +11,7 @@ import { debounceTime } from 'rxjs/operators';
 export class AppComponent implements OnInit, DoCheck {
   model: string | null = null;
   sortedModel: string | null = null;
-  changeSubject = new Subject();
+  changeSubject = new Subject<void>();
   isDescend = true;
   sortOrders = [
     { key: true, value: 'Descend' },

@@ -2,6 +2,7 @@
   <h1>Sort Lines Alphabetically</h1>
   <icon
     [type]="isDark ? 'moon' : 'sun'"
+    [fillRotate]="isDark ? '0' : '90'"
     size="3em"
     [fill]="['current', null]"
     aria-hidden="true"
@@ -9,7 +10,7 @@
 </header>
 <main #scrollElement>
   <section>
-    <fc-text
+    <jo-text
       [(ngModel)]="model"
       (ngModelChange)="changeSubject.next()"
     >
@@ -21,31 +22,31 @@
         [fill]="[null, 'current']"
         aria-hidden="true"
       ></icon>
-    </fc-text>
+    </jo-text>
     <div>
-      <fc-button (clicked)="onClickClear()">
+      <jo-button (onClick)="onClickClear()">
         Clear
-      </fc-button>
+      </jo-button>
     </div>
-    <fc-choice
+    <jo-choice
       [(ngModel)]="isDescend"
       (ngModelChange)="changeSubject.next()"
       required
       [items]="sortOrders"
     >
       Order
-    </fc-choice>
-    <fc-choice
+    </jo-choice>
+    <jo-choice
       [(ngModel)]="isRemoveDuplicate"
       (ngModelChange)="changeSubject.next()"
       required
       [items]="duplicateOptions"
     >
       Remove Duplicates
-    </fc-choice>
+    </jo-choice>
   </section>
   <section>
-    <fc-text
+    <jo-text
       [(ngModel)]="sortedModel"
       (ngModelChange)="onChangeResult()"
       [disabled]="sortedModel === null"
@@ -56,7 +57,7 @@
         size="1em"
         type="descend"
         fillRotate="90"
-        [fill]="[null, 'current']"
+        [fill]="['current', null]"
         aria-hidden="true"
       ></icon>
       <icon
@@ -64,42 +65,42 @@
         size="1em"
         type="ascend"
         fillRotate="90"
-        [fill]="['current', null]"
+        [fill]="[null, 'current']"
         aria-hidden="true"
       ></icon>
-    </fc-text>
+    </jo-text>
     <div>
-      <fc-button
+      <jo-button
         [isDisabled]="sortedModel === null"
-        (clicked)="onClickCopy()"
+        (onClick)="onClickCopy()"
       >
         Copy
-      </fc-button>
-      <fc-button
+      </jo-button>
+      <jo-button
         *ngIf="isResultChanged"
-        (clicked)="changeSubject.next()"
+        (onClick)="changeSubject.next()"
       >
         Reset
-      </fc-button>
+      </jo-button>
     </div>
     <div>
-      <fc-choice
+      <jo-choice
         [(ngModel)]="isDark"
         (ngModelChange)="onChangeTheme()"
         required
         [items]="themes"
       >
         Theme
-      </fc-choice>
+      </jo-choice>
     </div>
   </section>
 </main>
 <footer *ngIf="hasScrollbar">
-  <!-- <fc-link to my homepage> -->
-  <fc-button
+  <!-- <jo-link to my homepage> -->
+  <jo-button
     aria-label="Back to Top"
     title="Back to Top"
-    (clicked)="onClickTop(top)"
+    (onClick)="onClickTop(top)"
   >
     <icon
       type="chevron"
@@ -108,7 +109,7 @@
       [fill]="['current', null]"
       aria-hidden="true"
     ></icon>
-  </fc-button>
+  </jo-button>
 </footer>
 <div
   id="background"
