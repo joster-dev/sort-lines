@@ -1,5 +1,5 @@
 <header #top>
-  <h1>Sort Lines Alphabetically</h1>
+  <h1>Sort Lines</h1>
   <icon
     [type]="isDark ? 'moon' : 'sun'"
     [fillRotate]="isDark ? '0' : '90'"
@@ -8,7 +8,7 @@
     aria-hidden="true"
   ></icon>
 </header>
-<main #scrollElement>
+<main>
   <section>
     <jo-text
       [(ngModel)]="model"
@@ -27,23 +27,10 @@
       <jo-button (onClick)="onClickClear()">
         Clear
       </jo-button>
+      <span *ngIf="splitNewLine(model).length > 1">
+        {{splitNewLine(model).length}} lines
+      </span>
     </div>
-    <jo-choice
-      [(ngModel)]="isDescend"
-      (ngModelChange)="changeSubject.next()"
-      required
-      [items]="sortOrders"
-    >
-      Order
-    </jo-choice>
-    <jo-choice
-      [(ngModel)]="isRemoveDuplicate"
-      (ngModelChange)="changeSubject.next()"
-      required
-      [items]="duplicateOptions"
-    >
-      Remove Duplicates
-    </jo-choice>
   </section>
   <section>
     <jo-text
@@ -82,33 +69,58 @@
       >
         Reset
       </jo-button>
-    </div>
-    <div>
-      <jo-choice
-        [(ngModel)]="isDark"
-        (ngModelChange)="onChangeTheme()"
-        required
-        [items]="themes"
-      >
-        Theme
-      </jo-choice>
+      <span *ngIf="splitNewLine(sortedModel).length > 1">
+        {{splitNewLine(sortedModel).length}} lines
+      </span>
     </div>
   </section>
 </main>
+<aside>
+  <jo-choice
+    [(ngModel)]="isDescend"
+    (ngModelChange)="changeSubject.next()"
+    required
+    [items]="sortOrders"
+  >
+    Order
+  </jo-choice>
+  <jo-choice
+    [(ngModel)]="sortBy"
+    (ngModelChange)="changeSubject.next()"
+    required
+    [items]="sortOptions"
+  >
+    Sort By
+  </jo-choice>
+  <jo-choice
+    [(ngModel)]="isRemoveDuplicate"
+    (ngModelChange)="changeSubject.next()"
+    required
+    [items]="yesNoOptions"
+  >
+    Remove Duplicates
+  </jo-choice>
+  <jo-choice
+    [(ngModel)]="isRemoveEmpty"
+    (ngModelChange)="changeSubject.next()"
+    required
+    [items]="yesNoOptions"
+  >
+    Remove Empty Lines
+  </jo-choice>
+  <jo-choice
+    [(ngModel)]="isDark"
+    (ngModelChange)="onChangeTheme()"
+    required
+    [items]="themes"
+  >
+    Theme
+  </jo-choice>
+</aside>
 <footer *ngIf="hasScrollbar">
   <!-- <jo-link to my homepage> -->
-  <jo-button
-    aria-label="Back to Top"
-    title="Back to Top"
-    (onClick)="onClickTop(top)"
-  >
-    <icon
-      type="chevron"
-      size="1.5em"
-      fillRotate="90"
-      [fill]="['current', null]"
-      aria-hidden="true"
-    ></icon>
+  <jo-button (onClick)="onClickTop(top)">
+    Back to Top
   </jo-button>
 </footer>
 <div

@@ -23,10 +23,16 @@ export class AppComponent implements OnInit, DoCheck {
     { key: false, value: 'Light' },
   ];
   isRemoveDuplicate = false;
-  duplicateOptions = [
+  isRemoveEmpty = true;
+  yesNoOptions = [
     { key: true, value: 'Yes' },
     { key: false, value: 'No' },
   ];
+  sortBy: 'abc' | 'length' = 'abc';
+  sortOptions = [
+    { key: 'abc', value: 'Alphabetically' },
+    { key: 'length', value: 'Line Length' }
+  ]
   isResultChanged = false;
   hasScrollbar = false;
 
@@ -44,6 +50,10 @@ export class AppComponent implements OnInit, DoCheck {
 
   ngDoCheck(): void {
     this.hasScrollbar = this.hostElement.nativeElement.clientHeight < this.hostElement.nativeElement.scrollHeight;
+  }
+
+  splitNewLine(value: string | null): string[] {
+    return (value || '').split('\n');
   }
 
   onChangeResult(): void {
@@ -82,13 +92,19 @@ export class AppComponent implements OnInit, DoCheck {
       this.sortedModel = null;
       return;
     }
-    let split = this.model.split('\n');
+    let split = this.splitNewLine(this.model);
     if (this.isRemoveDuplicate) {
       split = [...new Set(split)];
     }
     this.sortedModel = split
-      .filter(value => value.trim().length > 0)
-      .sort((a, b) => a.localeCompare(b) * (this.isDescend ? 1 : -1))
+      .filter(value => !this.isRemoveEmpty || value.trim().length > 0)
+      .sort((a, b) => {
+        if (this.sortBy === 'abc') {
+          return a.localeCompare(b) * (this.isDescend ? 1 : -1);
+        } else {
+          return (b.length - a.length) * (this.isDescend ? 1 : -1);
+        }
+      })
       .join('\n');
   }
 }

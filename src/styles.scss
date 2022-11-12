@@ -19,9 +19,6 @@ header {
 footer {
   text-align: right;
   margin-bottom: 0.5em;
-  > jo-button {
-    display: inline-block;
-  }
 }
 
 main {
@@ -43,12 +40,26 @@ main {
       }
     }
 
+    > div > *:not(:last-child) {
+      margin-right: 0.5em;
+    }
+
     &:last-child {
       margin-top: 2em;
-      @media (min-width: 720px) {
+      @media (min-width: $break) {
         margin-top: 0;
       }
     }
+  }
+}
+
+aside {
+  display: grid;
+  margin-bottom: 2em;
+  grid-gap: 1em;
+
+  @media (min-width: $break) {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
