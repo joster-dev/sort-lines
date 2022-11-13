@@ -1,4 +1,4 @@
-import { Component, DoCheck, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -8,7 +8,7 @@ import { debounceTime } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, DoCheck {
+export class AppComponent implements OnInit {
   model: string | null = null;
   sortedModel: string | null = null;
   changeSubject = new Subject<void>();
@@ -30,13 +30,12 @@ export class AppComponent implements OnInit, DoCheck {
   ];
   sortBy: 'abc' | 'length' = 'abc';
   sortOptions = [
-    { key: 'abc', value: 'Alphabetically' },
+    { key: 'abc', value: 'Alphabet' },
     { key: 'length', value: 'Line Length' }
   ]
   isResultChanged = false;
-  hasScrollbar = false;
 
-  constructor(private hostElement: ElementRef) {
+  constructor() {
     this.changeSubject
       .pipe(debounceTime(500))
       .subscribe({
@@ -48,10 +47,6 @@ export class AppComponent implements OnInit, DoCheck {
     this.onChangeTheme();
   }
 
-  ngDoCheck(): void {
-    this.hasScrollbar = this.hostElement.nativeElement.clientHeight < this.hostElement.nativeElement.scrollHeight;
-  }
-
   splitNewLine(value: string | null): string[] {
     return (value || '').split('\n');
   }
@@ -61,7 +56,7 @@ export class AppComponent implements OnInit, DoCheck {
   }
 
   onChangeTheme(): void {
-    document.body.style.color = `#${this.isDark ? 'F5F5F5' : '0A0A0A'}`;
+    document.body.style.color = this.isDark ? 'white' : 'black';
   }
 
   onClickClear(): void {
@@ -78,12 +73,6 @@ export class AppComponent implements OnInit, DoCheck {
     } catch (error) {
       console.error(error);
     }
-  }
-
-  onClickTop(ele: HTMLElement): void {
-    ele.scrollIntoView({
-      behavior: 'smooth',
-    });
   }
 
   private sort(): void {

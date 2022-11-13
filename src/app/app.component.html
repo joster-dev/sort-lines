@@ -1,4 +1,4 @@
-<header #top>
+<header>
   <h1>Sort Lines</h1>
   <icon
     [type]="isDark ? 'moon' : 'sun'"
@@ -24,7 +24,10 @@
       ></icon>
     </jo-text>
     <div>
-      <jo-button (onClick)="onClickClear()">
+      <jo-button
+        [isDisabled]="model === null"
+        (onClick)="onClickClear()"
+      >
         Clear
       </jo-button>
       <span *ngIf="splitNewLine(model).length > 1">
@@ -117,11 +120,8 @@
     Theme
   </jo-choice>
 </aside>
-<footer *ngIf="hasScrollbar">
+<footer>
   <!-- <jo-link to my homepage> -->
-  <jo-button (onClick)="onClickTop(top)">
-    Back to Top
-  </jo-button>
 </footer>
 <div
   id="background"
