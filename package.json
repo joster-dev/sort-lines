@@ -2,7 +2,7 @@
   "name": "sort-lines",
   "version": "0.0.0",
   "scripts": {
-    "pages": "ng build --output-path=pages --base-href=https://joster-dev.github.io/sort-lines/"
+    "pages": "ng build --output-path=docs --base-href=https://joster-dev.github.io/sort-lines/"
   },
   "private": true,
   "dependencies": {
